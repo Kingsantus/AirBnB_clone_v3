@@ -153,9 +153,13 @@ EOF  all  create  destroy  help  quit  show  update
 ## Bugs
 No known bugs at this time. 
 
-## Authors
+## Authors 
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+
+## Authors updgrade codebase
+Asogwa Kingsantus - [Github] (https://github.com/kingsantus) / [Twitter] (https://twitter.com/blaqprinc)
+Mathew Ekoh - [Github] (https://github.com/mathewCodex) / [Twitter] (https://twitter.com/)
 
 Second part of Airbnb: Joann Vuong
 ## License
