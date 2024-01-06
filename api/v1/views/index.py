@@ -2,6 +2,7 @@
 """initializing app views"""
 from flask import jsonify
 from api.v1.views import app_views
+from models import storage
 
 
 @app_views.route('/status', methods=['GET'])
@@ -11,7 +12,13 @@ def get_status():
 @app_views.route('/stats', methods=['GET'])
 def get_stats():
     """Retrieve the number of each object type"""
-    classes = ['User', 'Place', 'City', 'Amenity', 'Review', 'State']
+    stats = {
+        'amenities': storage.count("Amenity"),
+        'cities': storage.count("City"),
+        'places': storage.count("Place"),
+        'reviews': storage.count("Review"),
+        'states': storage.count("State"),
+        'users': storage.count("User"),
+    }
 
-    stats = {cls: storage.count(eval(cls)) for cls in classes}
     return jsonify(stats)
