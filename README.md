@@ -159,7 +159,7 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 
 ## Authors updgrade codebase
 Asogwa Kingsantus - [Github] (https://github.com/kingsantus) / [Twitter] (https://twitter.com/blaqprinc)
-Mathew Ekoh - [Github] (https://github.com/mathewCodex) / [Twitter] (https://twitter.com/)
+Mathew Ekoh - [Github] (https://github.com/mathewCodex) / [Twitter] (https://twitter.com/mathew4codex)
 
 Second part of Airbnb: Joann Vuong
 ## License
