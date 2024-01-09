@@ -100,20 +100,17 @@ class FileStorage:
         FileStorage.__objects = {}
         self.save()
 
-    def close(self):
-        """
-            calls the reload() method for deserialization from JSON to objects
-        """
-        self.reload()
 
     def get(self, cls, id):
         """
             retrieves one object based on class name and id
         """
-        if cls and id:
-            fetch_obj = "{}.{}".format(cls, id)
-            all_obj = self.all(cls)
-            return all_obj.get(fetch_obj)
+        all_class = self.all(cls)
+
+        for obj in all_class.values():
+            if id == str(obj.id):
+                return obj
+
         return None
 
     def count(self, cls=None):
@@ -121,3 +118,9 @@ class FileStorage:
         count of all objects in storage
         """
         return (len(self.all(cls)))
+
+    def close(self):
+        """
+            calls the reload() method for deserialization from JSON to objects
+        """
+        self.reload()
