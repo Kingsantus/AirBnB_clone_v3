@@ -107,22 +107,17 @@ class DBStorage:
         self.__session = scoped_session(
             sessionmaker(
                 bind=self.__engine,
-                expire_on_commit=False))
-
-    def close(self):
-        """
-            calls remove() on private session attribute (self.session)
-        """
-        self.__session.remove()
+                expire_on_commit=False)
 
     def get(self, cls, id):
         """
             retrieves one object based on class name and id
         """
-        if cls and id:
-            fetch = "{}.{}".format(cls, id)
-            all_obj = self.all(cls)
-            return all_obj.get(fetch)
+        all_class = self.all(cls)
+
+        for obj in all_class.values():
+            if id == str(obj.id):
+                return obj
         return None
 
     def count(self, cls=None):
@@ -132,3 +127,9 @@ class DBStorage:
             matching given count
         """
         return (len(self.all(cls))
+
+    def close(self):
+        """
+            calls the reload() method for deserialization from JSON to objects
+        """
+        self.reload()
