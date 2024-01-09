@@ -132,6 +132,7 @@ class DBStorage:
             matching given count
         """
         return (len(self.all(cls))
+
     def close(self):
         """
             calls remove() on private session attribute (self.session)
