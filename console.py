@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" console """
+""" This is the console for the airbnb clone python pro"""
 
 import cmd
 from datetime import datetime
